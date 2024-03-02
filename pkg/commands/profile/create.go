@@ -134,7 +134,7 @@ func (c *CreateCommand) staticTokenFlow(makeDefault bool, in io.Reader, out io.W
 }
 
 func promptForToken(in io.Reader, out io.Writer, errLog fsterr.LogInterface) (string, error) {
-	text.Output(out, "\nAn API token is used to authenticate requests to the Fastly API. To create a token, visit https://manage.fastly.com/account/personal/tokens\n\n")
+	text.Output(out, "\nA user token is used to authenticate requests to the Fastly API. To create a token, visit https://manage.fastly.com/account/personal/tokens\n\n")
 	token, err := text.InputSecure(out, text.Prompt("Fastly API token: "), in, validateTokenNotEmpty)
 	if err != nil {
 		errLog.Add(err)
